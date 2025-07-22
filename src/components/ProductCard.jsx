@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
 
         <div className="mt-4 text-right">
           <Link
-            to={`/dashboard/product/${product._id}`}
+            to={`/product/${product._id}`}
             className="text-blue-600 hover:text-blue-800 text-sm inline-flex items-center gap-1"
           >
             View Details <FaArrowRight className="text-xs" />

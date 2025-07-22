@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed z-[999] ">
 
-      <div className="_navbar">
+      <div className="_navbar ">
         <Link to="/" className="text-2xl font-bold text-gray-800 dark:text-white/70">
           AppOrbit<span className="text-blue-400">.</span>
         </Link>

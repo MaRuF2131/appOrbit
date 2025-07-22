@@ -36,7 +36,7 @@ const view = (product) => {
     if (result.isConfirmed) {
       setSelectedProduct(product); // Open Choice Modal
     } else if (result.isDenied) {
-      navigate(`/dashboard/product/${product._id}`); // Go to product details page
+      navigate(`/product/${product._id}`); // Go to product details page
     }
     // If canceled, do nothing
   });

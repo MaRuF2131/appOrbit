@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 const Mainlayout=lazy(()=>import('../layouts/Mainlayout'));
 import Dashboardlayout from'../layouts/Dashboardlayout';
 const Home =lazy(()=>import('../pages/Home'));
-const Products =lazy(()=>import('../pages/forAllPage/ProductPage'));
+const Products =lazy(()=>import('../pages/forNonUserPage/ProductPage'));
 const Login =lazy(()=>import('../pages/Login'));
 const Register =lazy(()=>import('../pages/Register'));
 const PrivateRoute =lazy(()=>import('../routes/PrivateRoute'));
@@ -18,6 +18,7 @@ const Profile=lazy(()=>import("../pages/Profile"));
 const MessageRoute=lazy(()=>import("./MessageRoute"));
 const ManageUser=lazy(()=>import('../pages/adminPage/ManageUser'))
 const ProductReviewQueue =lazy(()=>import('../pages/moderatorPage/ProductReviewQueue'))
+const ProductDetails =lazy(()=>import('../pages/anyUserPage/ProductDetails'))
 import AdminPrivateRoute from "./AdminPrivateRoute";
 import ModeratorPrivateRoute from "./ModeratorPrivateRoute";
 
@@ -37,6 +38,10 @@ export const Routers=createBrowserRouter([
     {
       path: '/products',
       element: <Products/>
+    },
+    {
+      path: '/product/:id',
+      element: <ProductDetails/>
     },
     {
       path: '/login',

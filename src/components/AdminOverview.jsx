@@ -36,7 +36,6 @@ const AdminStatsContent = () => {
   const { total, dailyTrend } = data;
   console.log("total",total,'daily',dailyTrend);
   
-
   const pieData = [
     { name: 'Accepted Products', value: total.acceptedProducts },
     { name: 'Pending Products', value: total.pendingProducts },
@@ -116,6 +115,10 @@ const AdminStatsContent = () => {
         <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:scale-105 transform transition">
           <p className="text-3xl font-extrabold text-yellow-500">{total.acceptedProducts}</p>
           <p className="text-gray-600 dark:text-gray-300 mt-2">Accepted Products</p>
+        </div>
+        <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:scale-105 transform transition">
+          <p className="text-3xl font-extrabold text-rose-700">{total.totalRejected}</p>
+          <p className="text-gray-600 dark:text-gray-300 mt-2">Rejected Products</p>
         </div>
       </div>
     </section>
