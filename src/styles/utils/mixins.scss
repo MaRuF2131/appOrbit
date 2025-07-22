@@ -1,0 +1,19 @@
+@use './helper.scss' as * ;
+
+@mixin flex( $justify: center, $align: center) {
+  @apply flex flex-wrap;
+  @include apply-justify($justify);
+  @include apply-item($align);
+}
+
+@mixin inline-flex( $justify: center, $align: center) {
+  @apply inline-flex;
+  @include apply-justify($justify);
+  @include apply-item($align);
+}
+
+@mixin flex-col( $justify: center, $align: center) {
+  @apply flex flex-col;
+  @include apply-justify($justify);
+  @include apply-item($align);
+}

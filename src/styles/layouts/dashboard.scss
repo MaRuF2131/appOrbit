@@ -1,0 +1,5 @@
+@use "../utils/mixins.scss" as *;
+.dashboardlayout{
+ @include flex(center,start);
+ @apply h-screen w-full overflow-hidden 
+}

@@ -1,0 +1,5 @@
+@use '../utils/mixins.scss' as *;
+.dashboard-header{
+    @include inline-flex(between,center);
+    @apply w-full h-fit bg-[#504a54] dark:bg-black border-y-1 rounded-r-md border-blue-700 px-4 py-2 space-x-6;
+}

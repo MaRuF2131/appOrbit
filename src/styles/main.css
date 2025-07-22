@@ -1,0 +1,7 @@
+@import "./components/navbar.scss" ; 
+@import './pages/login.scss';
+@import './commonStyles/commonStyles.scss';
+@import './components/sidebar.scss';
+@import './components/hader.scss';
+@import './layouts/dashboard.scss';
+@import './components/productform.scss';

@@ -1,0 +1,37 @@
+@use '../utils/mixins.scss' as *;
+
+.login {
+  @include flex-col(center,center);
+  @apply max-w-lg dark:bg-black/50 bg-white/5 p-8 backdrop-blur-md rounded-md shadow-md border-1 border-blue-700 dark:text-white text-black space-y-2;
+}
+
+.login-form{
+  @include flex-col(center,center);
+  @apply w-full ; 
+
+}
+
+.login-form > div{
+  @apply  w-full p-1 rounded space-y-1  ;
+}
+.error-div{
+    @include flex-col(start,start);
+    @apply  w-full p-2 border-1 border-blue-700 rounded-md transform transition-all duration-1000 overflow-hidden relative; 
+
+}
+
+.error-list{
+  @include inline-flex(between,center);
+  @apply gap-2;
+}
+
+.google-button{
+  @apply cursor-pointer;
+}
+.login-button{
+  @apply cursor-pointer border-1 border-blue-700 bg-blue-700 hover:bg-blue-500 rounded-md px-5 py-1;
+}
+.login-title{
+  @apply text-3xl font-bold text-shadow-md text-shadow-blue-700;
+}
+

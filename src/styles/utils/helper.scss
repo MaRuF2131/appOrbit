@@ -1,0 +1,29 @@
+@mixin apply-justify($justify){
+    @if $justify == center{
+        @apply justify-center;
+    } @else if $justify == between{
+        @apply justify-between;
+    } @else if $justify == around{
+        @apply justify-around;
+    } @else if $justify == start{
+        @apply justify-start;
+    } @else if $justify == end{
+        @apply justify-end;
+    } @else if $justify == evenly{
+        @apply justify-evenly;
+    }
+}
+
+@mixin apply-item($align){
+    @if $align == center{
+        @apply items-center;
+    } @else if $align == start{
+        @apply items-start;
+    } @else if $align == end{
+        @apply items-end;
+    } @else if $align == stretch{
+        @apply items-stretch;
+    } @else if $align == baseline{
+        @apply items-baseline;
+    }
+}
