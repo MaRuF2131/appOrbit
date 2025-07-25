@@ -18,7 +18,7 @@ export const setUserInterceptor = (user) => {
   interceptorId = axiosInstance.interceptors.request.use(
     (config) => {
       if (user) {
-        config.headers['x-user'] = JSON.stringify(user);
+        config.headers['authorization'] = JSON.stringify(user);
       }else {
       delete config.headers['x-user']; // ❌ remove header if no user
     }

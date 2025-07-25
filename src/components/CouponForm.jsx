@@ -30,7 +30,7 @@ const CouponForm = ({ setShowForm }) => {
   return (
     <form
       onSubmit={handleSubmit(handleAddCoupon)}
-      className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl w-full max-w-lg mx-auto border border-blue-700 dark:border-blue-600"
+      className="bg-white dark:bg-gray-900 md:p-8 p-2 rounded-2xl shadow-xl w-full max-w-lg mx-auto border border-blue-700 dark:border-blue-600"
     >
       <h2 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-6 text-center">
         🎁 Add New Coupon

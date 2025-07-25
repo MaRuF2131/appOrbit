@@ -8,7 +8,7 @@ const CouponCard = ({ coupon, onDelete ,onEdit,onView }) => {
         {coupon.description}
       </p>
       <div className="flex justify-between mt-2 text-sm dark:text-amber-100 text-black">
-        <span>Expires: {coupon.expiryDate}</span>
+        <span>Expires: {new Date(coupon.expiryDate).toLocaleDateString()}</span>
         <span>💸 {coupon.discount}%</span>
       </div>
       <div className="flex gap-4 mt-4">

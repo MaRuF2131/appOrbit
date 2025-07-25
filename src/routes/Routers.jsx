@@ -6,23 +6,24 @@ const Home =lazy(()=>import('../pages/Home'));
 const Products =lazy(()=>import('../pages/forNonUserPage/ProductPage'));
 const Login =lazy(()=>import('../pages/Login'));
 const Register =lazy(()=>import('../pages/Register'));
-const PrivateRoute =lazy(()=>import('../routes/PrivateRoute'));
-const AddPrudctpage =lazy(()=>import('../pages/AddProductpage'));
+const AddPrudctpage =lazy(()=>import('../pages/normalUser/AddProductpage'));
 const ElementErrorPage=lazy(()=>import('../pages/ElementErrorPage'));
-const MyPrudctpage=lazy(()=>import("../pages/Myproduct"))
-import ActionOnForm from'../utils/FormFunction/ActionOnForm';
-import Routeerror from '../pages/Routeerror';
-const UpdateProduct=lazy(()=>import("../pages/UpdateProduct"));
+const MyPrudctpage=lazy(()=>import("../pages/normalUser/Myproduct"))
+const UpdateProduct=lazy(()=>import("../pages/normalUser/UpdateProduct"));
 const Overview=lazy(()=>import("../pages/Overview"));
-const Profile=lazy(()=>import("../pages/Profile"));
+const Profile=lazy(()=>import("../pages/normalUser/Profile"));
 const MessageRoute=lazy(()=>import("./MessageRoute"));
 const ManageUser=lazy(()=>import('../pages/adminPage/ManageUser'))
 const ProductReviewQueue =lazy(()=>import('../pages/moderatorPage/ProductReviewQueue'))
+const ReportedContents=lazy(()=>import("../pages/moderatorPage/ReportedContents"))
 const ProductDetails =lazy(()=>import('../pages/anyUserPage/ProductDetails'))
+const ManageCoupons=lazy(()=>import("../pages/adminPage/ManageCoupon"))
 import AdminPrivateRoute from "./AdminPrivateRoute";
 import ModeratorPrivateRoute from "./ModeratorPrivateRoute";
-
-const ManageCoupons=lazy(()=>import("../pages/adminPage/ManageCoupon"))
+import NormalUserPrivateRoute from "./NormalUserPrivateRoute";
+import PrivateRoute from'../routes/PrivateRoute';
+import ActionOnForm from'../utils/FormFunction/ActionOnForm';
+import Routeerror from '../pages/Routeerror';
 
 export const Routers=createBrowserRouter([
    {
@@ -41,7 +42,11 @@ export const Routers=createBrowserRouter([
     },
     {
       path: '/product/:id',
-      element: <ProductDetails/>
+      element:(
+         <PrivateRoute>
+           <ProductDetails/>
+         </PrivateRoute>
+        )
     },
     {
       path: '/login',
@@ -78,9 +83,9 @@ export const Routers=createBrowserRouter([
     {
       path: '/dashboard/Add Products',
       element: (
-        <PrivateRoute>
+        <NormalUserPrivateRoute>
           <AddPrudctpage />
-        </PrivateRoute>
+        </NormalUserPrivateRoute>
       )
     },
     {
@@ -94,25 +99,25 @@ export const Routers=createBrowserRouter([
     {
       path: '/dashboard/My Profile',
       element: (
-        <PrivateRoute>
+        <NormalUserPrivateRoute>
           <Profile />
-        </PrivateRoute>
+        </NormalUserPrivateRoute>
       )
     },
     {
       path: '/dashboard/My Products',
       element: (
-        <PrivateRoute>
+        <NormalUserPrivateRoute>
           <MyPrudctpage />
-        </PrivateRoute>
+        </NormalUserPrivateRoute>
       )
     },
     {
       path: '/dashboard/products/update/:id',
       element: (
-        <PrivateRoute>
+        <NormalUserPrivateRoute>
           <UpdateProduct />
-        </PrivateRoute>
+        </NormalUserPrivateRoute>
       )
     },
 
@@ -148,7 +153,7 @@ export const Routers=createBrowserRouter([
       path:'/dashboard/Reported Contents',
       element:(
         <ModeratorPrivateRoute>
-           <ProductReviewQueue></ProductReviewQueue>
+           <ReportedContents></ReportedContents>
         </ModeratorPrivateRoute>
       )
     }

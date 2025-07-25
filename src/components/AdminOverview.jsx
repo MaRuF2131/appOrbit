@@ -46,7 +46,7 @@ const AdminStatsContent = () => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-xl">
+    <section className="max-w-6xl mx-auto md:px-6 px-2 py-12 bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-xl">
       <h2 className="text-4xl font-extrabold mb-8 text-center text-gray-800 dark:text-white tracking-tight">
         📊 Admin Dashboard Overview
       </h2>
@@ -76,7 +76,7 @@ const AdminStatsContent = () => {
       </div>
 
       {/* Line Chart */}
-      <div className="w-full h-[400px] mb-10 rounded-lg bg-white dark:bg-gray-800 shadow-md p-4">
+      <div className="w-full h-[400px] mb-10 rounded-lg bg-white dark:bg-gray-800 shadow-md md:p-4 p-1">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={dailyTrend} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />

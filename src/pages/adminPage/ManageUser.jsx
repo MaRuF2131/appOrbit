@@ -46,7 +46,7 @@ const UserTable = () => {
   };
 
   return (
- <div className="p-6 max-w-7xl mx-auto">
+ <div className="md:p-6 p-2 max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-10 text-lime-600 dark:text-blue-400 tracking-wide">
             🧑‍💼 Manage Users
             </h2>

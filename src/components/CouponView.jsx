@@ -12,7 +12,7 @@ const CouponView = ({ coupon, onClose }) => {
   }, [coupon]);
 
   return (
-    <div className="fixed left-[50%] top-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl w-full max-w-lg mx-auto border border-blue-700 dark:border-blue-600 z-50">
+    <div className="fixed left-[50%] top-[50%] overflow-auto max-h-screen transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-900 md:p-8 p-2 rounded-2xl shadow-xl w-full max-w-lg mx-auto border border-blue-700 dark:border-blue-600 z-[1000]">
       {loading ? (
         <TextOrCardLoading />
       ) : (

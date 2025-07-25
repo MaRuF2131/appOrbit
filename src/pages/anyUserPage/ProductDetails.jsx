@@ -5,15 +5,20 @@ import ReviewCard from "../../components/ReviewCard";
 import ReviewForm from "../../components/ReviewForm";
 import ComponentLoader from '../../components/ComponentLoader'
 import axiosInstance from "../../utils/axios";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const queryClient = useQueryClient();
-   const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const rightRef = useRef();
+  const [rightHeight, setRightHeight] = useState(0);
 
+  useEffect(()=>{
+    document.title='Product details - AppOrbit'
+  },[])
   // Fetch product
   const { data: product, isLoading } = useQuery({
     queryKey: ["product", id],
@@ -90,6 +95,11 @@ const reviewMutation = useMutation({
   },
 });
 
+  useEffect(() => {
+    if (rightRef.current) {
+      setRightHeight(rightRef.current.offsetHeight);
+    }
+  }, [product]);
 
 
   if (isLoading) return <ComponentLoader></ComponentLoader>;
@@ -97,16 +107,17 @@ const reviewMutation = useMutation({
   const isOwner = user?.email === product?.owner_mail;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 md:py-10 py-2">
       {/* Product Detail Card */}
       <div className="bg-white dark:bg-gray-900 shadow rounded-lg p-6 mb-8">
-        <div className="grid md:grid-cols-2 gap-6 items-center">
+        <div className="grid md:grid-cols-2 gap-6 items-center ">
           <img
             src={product.product_image}
             alt={product.product_name}
-            className="w-full max-w-52 rounded-lg shadow"
+            style={{ maxHeight: rightHeight }}
+            className="w-full   h-full rounded-lg shadow"
           />
-          <div>
+          <div className="right" ref={rightRef}>
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
               {product.product_name}
             </h2>

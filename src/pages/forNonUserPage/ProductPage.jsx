@@ -15,7 +15,7 @@ const ProductsPage = () => {
   };
 
   return (
-    <div className="px-4 py-8 max-w-7xl w-full mx-auto">
+    <div className="px-4 md:py-8 max-w-7xl w-full mx-auto">
       {/* Search Bar */}
       <form
         onSubmit={handleSearch}

@@ -1,14 +1,14 @@
 import { useForm } from 'react-hook-form';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import axiosInstance from '../utils/axios';
+import axiosInstance from '../../utils/axios';
 import { WithContext as ReactTags } from 'react-tag-input';
 import Swal from 'sweetalert2';
 import { 
   StringValidationCheck,
   DangerousContentCheck,
   UrlValidationCheck,
-} from "../utils/custom-validation/CustomValidation";
+} from "../../utils/custom-validation/CustomValidation";
 import { useEffect, useState } from 'react';
 
 const KeyCodes = {

@@ -27,7 +27,7 @@ const slides = [
 
 const Banner = () => {
   return (
-    <div className="w-full h-[75vh]">
+    <div className="w-full md:h-[75vh] h-[50vh]">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 5000 }}
@@ -36,7 +36,7 @@ const Banner = () => {
         className="h-full w-full z-10"
       >
         {slides.map((slide) => (
-          <SwiperSlide key={slide.id} className=' w-full h-[75vh] z-20 bg-black'>
+          <SwiperSlide key={slide.id} className=' w-full md:h-[75vh] h-[50vh] z-20 bg-black'>
             <div
               className=" w-full h-full z-20  flex items-center justify-center "
               style={{

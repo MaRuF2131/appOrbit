@@ -1,4 +1,4 @@
-import  ProductFrom  from '../components/ProductFrom'
+import  ProductFrom  from '../../components/ProductFrom'
 
 const AddProductpage = () => {
   return (

@@ -21,7 +21,7 @@ const ManageCoupons = () => {
 
 
   return (
-    <div className="p-6">
+    <div className="md:p-6 p-2">
       <h1 className="text-3xl font-bold text-center text-white dark:text-black mb-6">
         🎟️ Manage Coupons
       </h1>

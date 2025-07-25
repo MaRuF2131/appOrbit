@@ -1,15 +1,23 @@
 // src/pages/MyProfile.jsx
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-import useAuth from "../hooks/UseAuth";
+import useAuth from "../../hooks/UseAuth";
 import { FaCrown, FaUserCircle } from "react-icons/fa";
 import { BsPatchCheckFill } from "react-icons/bs";
+import PaymentForm from "../../components/PaymentForm";
 import toast from "react-hot-toast";
-import AxiosInstance from "../utils/axios";
+import AxiosInstance from "../../utils/axios";
+import { useState } from "react";
+
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+// ✅ Replace with your Stripe public key
+const stripePromise = loadStripe(import.meta.env.VITE_payment_key);
+
 
 const MyProfile = () => {
   const { user } = useAuth();
-  const queryClient = useQueryClient();
+  const [payment,setpayment]=useState(false);
 
   // ✅ Fetch user info
   const { data: subscriberInfo = {}, isLoading } = useQuery({
@@ -28,7 +36,7 @@ const MyProfile = () => {
   });
 
   // ✅ Membership subscribe mutation
-  const subscribeMutation = useMutation({
+/*   const subscribeMutation = useMutation({
     mutationFn: async () => {
       const res = await AxiosInstance.patch(`/api/private/sendsubscribe`);
       return res.data;
@@ -38,8 +46,8 @@ const MyProfile = () => {
       queryClient.invalidateQueries(["subscriberInfo"]);
     },
     onError: () => toast.error("Failed to subscribe!"),
-  });
-
+  }); */
+  const { ok,message, subscription } = subscriberInfo;
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -48,7 +56,6 @@ const MyProfile = () => {
     );
   }
 
-  const { ok,message, subscription } = subscriberInfo;
 
 
   return (
@@ -83,7 +90,7 @@ const MyProfile = () => {
             </div>
           ) : (
             <button
-              onClick={() => subscribeMutation.mutate()}
+              onClick={() =>setpayment(true)}
               disabled={subscription}
               className="bg-gradient-to-r from-lime-500 to-green-600 text-white px-5 py-2 mt-4 rounded-full hover:scale-105 transition-all duration-200 font-semibold shadow-md"
             >
@@ -107,7 +114,12 @@ const MyProfile = () => {
           <li>Enjoy a better experience with no ads or limitations.</li>
         </ul>
       </div>
-    </div>
+
+      {payment && <Elements stripe={stripePromise}>
+                      <PaymentForm onClose={()=>setpayment(false)} />
+                    </Elements>
+                  }
+  </div>
   );
 };
 

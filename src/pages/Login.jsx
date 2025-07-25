@@ -34,8 +34,8 @@ const Login = () => {
       toast.success('Login successful! 🎉');
       navigate('/');
     } catch (err) {
-      console.error(err);
-      toast.error(err.message || 'Login failed!');
+      console.log(err);
+      toast.error('Login failed!');
       setError(err.message);
     }
   };
@@ -47,7 +47,7 @@ const Login = () => {
       navigate('/');
     } catch (err) {
       console.error(err);
-      toast.error(err.message || 'Google Sign-in failed!');
+      toast.error('Google Sign-in failed!');
       setError(err.message);
     }
   };
