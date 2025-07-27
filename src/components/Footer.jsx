@@ -15,9 +15,8 @@ const Footer = () => {
         {/* Useful Links */}
         <div className="space-x-6  flex flex-wrap overflow-hidden justify-start items-start">
           <Link to="/" className="hover:text-blue-400 transition">Home</Link>
-          <Link to="/about" className="hover:text-blue-400 transition">About</Link>
-          <Link to="/contact" className="hover:text-blue-400 transition">Contact</Link>
-          <Link to="/privacy" className="hover:text-blue-400 transition">Privacy</Link>
+          <a target="_blank" href="https://www.linkedin.com/in/maruf-ahmmed-81325824a" className="hover:text-blue-400 transition">Linkedin</a>
+          <a target="_blank" href="https://github.com/MaRuF2131" className="hover:text-blue-400 transition">Github</a>
         </div>
 
         {/* Copyright */}

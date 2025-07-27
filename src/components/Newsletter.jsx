@@ -12,14 +12,14 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section className="max-w-6xl mx-auto py-12 px-6 bg-cyan-100 dark:bg-cyan-900 rounded-lg text-center">
+    <section className="max-w-6xl mx-auto py-12 md:px-6 px-2 bg-cyan-100 dark:bg-cyan-900 rounded-lg text-center">
       <h2 className="text-3xl font-bold mb-4 text-cyan-800 dark:text-cyan-200">
         Stay Updated
       </h2>
       <p className="mb-6 text-gray-700 dark:text-gray-300">
         Subscribe to our newsletter to get the latest updates and offers.
       </p>
-      <form onSubmit={handleSubmit} className="flex justify-center max-w-md mx-auto gap-4">
+      <form onSubmit={handleSubmit} className="flex flex-wrap justify-center max-w-md mx-auto gap-4">
         <input
           type="email"
           placeholder="Your email address"

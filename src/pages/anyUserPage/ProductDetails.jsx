@@ -107,9 +107,9 @@ const reviewMutation = useMutation({
   const isOwner = user?.email === product?.owner_mail;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 md:py-10 py-2">
+    <div className="max-w-6xl mx-auto md:px-4 px-2 md:py-10 py-2">
       {/* Product Detail Card */}
-      <div className="bg-white dark:bg-gray-900 shadow rounded-lg p-6 mb-8">
+      <div className="bg-white dark:bg-gray-900 shadow rounded-lg md:p-6 p-2 mb-8">
         <div className="grid md:grid-cols-2 gap-6 items-center ">
           <img
             src={product.product_image}
@@ -196,7 +196,7 @@ const reviewMutation = useMutation({
       </div>
 
       {/* Post Review Section */}
-      <div className="bg-white dark:bg-gray-900 shadow rounded-lg p-6">
+      <div className="bg-white dark:bg-gray-900 shadow rounded-lg md:p-6 p-2">
         <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
           Post Your Review
         </h3>
