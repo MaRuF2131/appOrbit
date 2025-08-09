@@ -75,8 +75,17 @@ A modern, secure, and scalable SaaS platform built with React, Node.js, Firebase
 - `react`  
 - `react-dom`  
 - `react-router-dom`  
+- `react-hook-form`  
+- `react-query`  
 - `firebase`  
 - `vite` (development dependency)
+
+---
+## 📦 How to run locally 
+
+- `git clone "repo link here" `  
+- `npm  install`  
+- `npm run dev`  
 
 ---
 
